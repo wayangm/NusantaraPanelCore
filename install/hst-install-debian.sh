@@ -532,25 +532,7 @@ if [ -d /etc/netplan ] && [ -z "$force" ]; then
 	fi
 fi
 
-# Validate whether installation script matches release version before continuing with install
-if [ -z "$withdebs" ] || [ ! -d "$withdebs" ]; then
-	release_branch_ver=$(curl -s https://raw.githubusercontent.com/nusantara-panel/nusantara/release/src/deb/hestia/control | grep "Version:" | awk '{print $2}')
-	if [ "$HESTIA_INSTALL_VER" != "$release_branch_ver" ]; then
-		echo
-		echo -e "\e[91mInstallation aborted\e[0m"
-		echo "===================================================================="
-		echo -e "\e[33mERROR: Install script version does not match package version!\e[0m"
-		echo -e "\e[33mPlease download the installer from the release branch in order to continue:\e[0m"
-		echo ""
-		echo -e "\e[33mhttps://raw.githubusercontent.com/nusantara-panel/nusantara/release/install/hst-install.sh\e[0m"
-		echo ""
-		echo -e "\e[33mTo test pre-release versions, build the .deb packages and re-run the installer:\e[0m"
-		echo -e "  \e[33m./hst_autocompile.sh \e[1m--hestia branchname no\e[21m\e[0m"
-		echo -e "  \e[33m./hst-install.sh .. \e[1m--with-debs /tmp/hestiacp-src/debs\e[21m\e[0m"
-		echo ""
-		# # # # # # # check_result 1 "Installation aborted" # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara
-	fi
-fi
+# Version check disabled for Nusantara Panel distribution
 
 case $architecture in
 	x86_64)
@@ -579,12 +561,12 @@ esac
 install_welcome_message() {
 	DISPLAY_VER=$(echo $HESTIA_INSTALL_VER | sed "s|~alpha||g" | sed "s|~beta||g")
 	echo
-	echo ' _   _                       _                         ____                  _ '
-	echo '| \ | |_   _ ___  __ _ _ __ | |_ __ _ _ __ __ _      |  _ \ __ _ _ __   ___| |'
-	echo '|  \| | | | / __|/ _` | |\'_ \| __/ _` | \'__/ _` |     | |_) / _` | |\'_ \ / _ \ |'
-	echo '| |\  | |_| \__ \ (_| | | | | || (_| | | | (_| |     |  __/ (_| | | | |  __/ |'
-	echo '|_| \_|\__,_|___/\__,_|_| |_|\__\__,_|_|  \__,_|     |_|   \__,_|_| |_|\___|_|'
-	echo "                                                                                "
+	echo "  _   _                      _                   ____                  _ "
+	echo " | \\ | |_   _ ___  __ _ _ __| |_ __ _ _ __ __ _|  _ \\ __ _ _ __   ___| |"
+	echo " |  \\| | | | / __|/ _  |  _ \\ __/ _  | '__/ _  | |_) / _  | '_ \\ / _ \\ |"
+	echo " | |\\ | |_| \\__ \\ (_| | | | | || (_| | | | (_| |  __/ (_| | | | |  __/ |"
+	echo " |_| \\_|\\__,_|___/\\__,_|_| |_|\\__\\__,_|_|  \\__,_|_|   \\__,_|_| |_|\\___|_|"
+	echo ""
 	echo "                          Nusantara Panel                                      "
 	if [[ "$HESTIA_INSTALL_VER" =~ "beta" ]]; then
 		echo "                              BETA RELEASE                                  "
