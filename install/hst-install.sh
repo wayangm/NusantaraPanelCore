@@ -107,21 +107,27 @@ check_wget_curl() {
 		bash hst-install-$type.sh $*
 		exit
 	fi
-	# Fallback to wget if not local
-	if [ -e '/usr/bin/wget' ]; then
 
-	# Check curl
-	if [ -e '/usr/bin/curl' ]; then
-		curl -s -O https://raw.githubusercontent.com/nusantara-panel/nusantara/release/install/hst-install-$type.sh
+	# Fallback to GitHub (NusantaraPanelCore)
+	echo "[ * ] Downloading OS-specific installer from GitHub..."
+	if [ -e '/usr/bin/wget' ]; then
+		wget -q https://raw.githubusercontent.com/wayangm/NusantaraPanelCore/main/install/hst-install-$type.sh -O hst-install-$type.sh
 		if [ "$?" -eq '0' ]; then
 			bash hst-install-$type.sh $*
 			exit
-		else
-			echo "Error: hst-install-$type.sh download failed."
-			exit 1
 		fi
-		# fi
 	fi
+
+	if [ -e '/usr/bin/curl' ]; then
+		curl -s -O https://raw.githubusercontent.com/wayangm/NusantaraPanelCore/main/install/hst-install-$type.sh
+		if [ "$?" -eq '0' ]; then
+			bash hst-install-$type.sh $*
+			exit
+		fi
+	fi
+	
+	echo "Error: hst-install-$type.sh download failed."
+	exit 1
 }
 
 # Check for supported operating system before proceeding with download
