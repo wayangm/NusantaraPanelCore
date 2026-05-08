@@ -131,10 +131,12 @@ Kontribusi sangat disambut! Silakan baca [Panduan Kontribusi](https://github.com
 
 Nusantara Panel dilisensikan di bawah [GPL v3](https://github.com/wayangm/NusantaraPanelCore/blob/main/LICENSE).
 
-Panel ini merupakan fork dari proyek [HestiaCP](https://github.com/hestiacp/hestiacp) yang juga dilisensikan di bawah GPL v3.
+Nusantara Panel adalah hasil **rebranding** dari proyek [HestiaCP](https://github.com/hestiacp/hestiacp) yang juga dilisensikan di bawah GPL v3, yang sebelumnya berbasis dari proyek [VestaCP](https://vestacp.com/).
 
 ---
 
 <p align="center">
-  Dibuat dengan ❤️ oleh <strong>WG Media Indonesia</strong>
+  <strong>Nusantara Panel</strong> &mdash; Distribusi Panel Hosting Indonesia<br/>
+  Dibangun di atas fondasi <a href="https://github.com/hestiacp/hestiacp">HestiaCP</a>, dikustomisasi dan dibranding ulang oleh <strong>WG Media Indonesia</strong><br/><br/>
+  © 2024–2026 Nusantara Panel | WG Media Indonesia
 </p>
