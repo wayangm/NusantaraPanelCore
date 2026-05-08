@@ -108,8 +108,7 @@ check_wget_curl() {
 		exit
 	fi
 
-	# Fallback to GitHub (NusantaraPanelCore)
-	echo "[ * ] Downloading OS-specific installer from GitHub..."
+	# Download from NusantaraPanelCore GitHub
 	if [ -e '/usr/bin/wget' ]; then
 		wget -q https://raw.githubusercontent.com/wayangm/NusantaraPanelCore/main/install/hst-install-$type.sh -O hst-install-$type.sh
 		if [ "$?" -eq '0' ]; then
@@ -125,7 +124,7 @@ check_wget_curl() {
 			exit
 		fi
 	fi
-	
+
 	echo "Error: hst-install-$type.sh download failed."
 	exit 1
 }

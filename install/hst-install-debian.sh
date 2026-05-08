@@ -548,7 +548,7 @@ if [ -z "$withdebs" ] || [ ! -d "$withdebs" ]; then
 		echo -e "  \e[33m./hst_autocompile.sh \e[1m--hestia branchname no\e[21m\e[0m"
 		echo -e "  \e[33m./hst-install.sh .. \e[1m--with-debs /tmp/hestiacp-src/debs\e[21m\e[0m"
 		echo ""
-		# # # # # # check_result 1 "Installation aborted" # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara
+		# # # # # # # check_result 1 "Installation aborted" # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara
 	fi
 fi
 
@@ -568,7 +568,7 @@ case $architecture in
 		echo ""
 		echo -e "\e[33mhttps://github.com/nusantara-panel/nusantara/blob/main/README.md\e[0m"
 		echo ""
-		# # # # # # check_result 1 "Installation aborted" # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara
+		# # # # # # # check_result 1 "Installation aborted" # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara # Disabled for Nusantara
 		;;
 esac
 
