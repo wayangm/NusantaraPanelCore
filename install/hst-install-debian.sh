@@ -579,23 +579,23 @@ esac
 install_welcome_message() {
 	DISPLAY_VER=$(echo $HESTIA_INSTALL_VER | sed "s|~alpha||g" | sed "s|~beta||g")
 	echo
-	echo '                _   _           _   _        ____ ____                  '
-	echo '               | | | | ___  ___| |_(_) __ _ / ___|  _ \                 '
-	echo '               | |_| |/ _ \/ __| __| |/ _` | |   | |_) |                '
-	echo '               |  _  |  __/\__ \ |_| | (_| | |___|  __/                 '
-	echo '               |_| |_|\___||___/\__|_|\__,_|\____|_|                    '
-	echo "                                                                        "
-	echo "                          Nusantara Panel                          "
+	echo ' _   _                       _                         ____                  _ '
+	echo '| \ | |_   _ ___  __ _ _ __ | |_ __ _ _ __ __ _      |  _ \ __ _ _ __   ___| |'
+	echo '|  \| | | | / __|/ _` | |\'_ \| __/ _` | \'__/ _` |     | |_) / _` | |\'_ \ / _ \ |'
+	echo '| |\  | |_| \__ \ (_| | | | | || (_| | | | (_| |     |  __/ (_| | | | |  __/ |'
+	echo '|_| \_|\__,_|___/\__,_|_| |_|\__\__,_|_|  \__,_|     |_|   \__,_|_| |_|\___|_|'
+	echo "                                                                                "
+	echo "                          Nusantara Panel                                      "
 	if [[ "$HESTIA_INSTALL_VER" =~ "beta" ]]; then
-		echo "                              BETA RELEASE                          "
+		echo "                              BETA RELEASE                                  "
 	fi
 	if [[ "$HESTIA_INSTALL_VER" =~ "alpha" ]]; then
-		echo "                          DEVELOPMENT SNAPSHOT                      "
-		echo "                    NOT INTENDED FOR PRODUCTION USE                 "
-		echo "                          USE AT YOUR OWN RISK                      "
+		echo "                          DEVELOPMENT SNAPSHOT                              "
+		echo "                    NOT INTENDED FOR PRODUCTION USE                         "
+		echo "                          USE AT YOUR OWN RISK                              "
 	fi
-	echo "                                  ${DISPLAY_VER}                        "
-	echo "                            www.nusantarapanel.local                            "
+	echo "                                  ${DISPLAY_VER}                              "
+	echo "                     github.com/wayangm/NusantaraPanelCore                    "
 	echo
 	echo "========================================================================"
 	echo
